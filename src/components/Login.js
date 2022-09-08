@@ -10,14 +10,14 @@ function Login({ setAuth }) {
     signInWithPopup(auth, provider).then((result) => {
       localStorage.setItem("isAuth", true);
       setAuth(true);
-      navigate("/", { replace: true });
+      navigate("/");
     });
   };
 
   return (
     <div className="loginPage">
       <button className="Google_Login_btn" onClick={signInGoogle}>
-        Google Login
+        Sign in with Google
       </button>
     </div>
   );
