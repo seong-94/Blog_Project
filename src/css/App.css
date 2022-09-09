@@ -94,9 +94,6 @@ textarea {
   align-items: center;
 }
 
-.loginPage p {
-  font-size: 30px;
-}
 
 /* GOOGLE BUTTOn */
 .Google_Login_btn {
@@ -107,7 +104,7 @@ textarea {
   border-radius: 3px;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
   color: #757575;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -164,20 +161,7 @@ textarea {
 .postHeader .title {
   flex: 50%;
 }
-.postHeader .deletePost {
-  flex: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
 
-.deletePost button {
-  border: none;
-
-  background: none;
-  font-size: 30px;
-  cursor: pointer;
-}
 
 .post .postTextContainer {
   word-wrap: break-word;

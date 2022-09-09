@@ -12,9 +12,14 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faRightToBracket as login,
+  faRightFromBracket as logout,
+} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(localStorage.getItem("isAuth"));
 
   let navigate = useNavigate();
 
@@ -22,7 +27,7 @@ function App() {
     signOut(auth).then(() => {
       localStorage.clear();
       setAuth(false);
-      window.location.pathname = "/login"; //오류 .....
+      window.location.pathname = "/login";
     });
   };
   return (
@@ -30,16 +35,21 @@ function App() {
       <nav>
         <Link to="/"> Home </Link>
         {!isAuth ? (
-          <Link to="/login"> Login </Link>
+          <Link to="/login">
+            <FontAwesomeIcon icon={login}></FontAwesomeIcon>
+          </Link>
         ) : (
           <>
-            <button onClick={signUserOut}> Log Out </button>
             <Link to="/createpost">Createpost</Link>
+            <FontAwesomeIcon
+              onClick={signUserOut}
+              icon={logout}
+            ></FontAwesomeIcon>
           </>
         )}
       </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/login" element={<Login setAuth={setAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
       </Routes>
