@@ -39,22 +39,7 @@ function SideMenu() {
                 <span>Dash Board</span>
               </p>
             </li>
-            <li>
-              <p className="menu_item">
-                <div className="menu_icon">
-                  <i class="bi bi-calendar2-range-fill"></i>
-                </div>
-                <span>게시판</span>
-              </p>
-              <ul className="sub_menu">
-                <li>
-                  <p>Sub_Menu</p>
-                </li>
-                <li>
-                  <p>Sub_Menu</p>
-                </li>
-              </ul>
-            </li>
+
             <li>
               <p className="menu_item">
                 <div className="menu_icon">
